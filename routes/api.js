@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
+const express = require("express");
+const app = express();
+const router = express.Router();
 
-module.exports = function (app) {
+const { getQuote } = require("../controllers/quoteController");
 
-  app.route('/api/stock-prices')
-    .get(function (req, res){
-      
-    });
-    
-};
+router.route("/api/stock-prices").get(getQuote);
+
+module.exports = router;
